@@ -2,10 +2,8 @@ import java.util.ArrayList;
 public class WordChecker {
     public WordChecker(ArrayList<String> list) 
     {
-        wordList = list;
-        String after = wordList.size(i);
-        String before = wordList.size(i);
-        for (int i = 1; i < wordList.size(); i++);
+        wordList = list;    
+
     }
     public WordChecker()
     {
@@ -16,10 +14,18 @@ public class WordChecker {
    
     public boolean isWordChain()
     {
-       
+        for (int i = 1; i < wordList.size(); i++) {
+            String after = wordList.get(i);
+            String before = wordList.get(i - 1);
+            if (after.indexOf(before) < 0) return false;
+        }
+       return true;
     }
 
  
-    public ArrayList<String> createList(String target) {
-      }
+    public ArrayList<String> createList(String target) 
+    {
+        ArrayList<String> list = new ArrayList<String>();
+        for (String s : wordList)
+    }
 }
